@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jessa Dañeliz | Web Developer Portfolio</title>
+<meta name="description" content="Jessa Dañeliz - Aspiring Web Developer Portfolio">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --cream:#faf7f0;
+ --brown:#38291f;
+ --gold:#b58b55;
+ --light:#e9dcc9;
+ --white:#fffdf9;
+ --text:#645448;
+}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+nav{position:fixed;top:0;left:0;width:100%;z-index:99;padding:20px 8%;display:flex;justify-content:space-between;align-items:center;background:rgba(250,247,240,.95);backdrop-filter:blur(12px);border-bottom:1px solid #e8ddce}
+.logo{font-family:'Playfair Display',serif;font-size:23px;color:var(--brown);font-weight:bold}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;list-style:none;gap:25px}
+.nav-links a{font-size:12px;text-transform:uppercase;letter-spacing:1px;transition:.3s}
+.nav-links a:hover{color:var(--gold)}
+.menu-toggle{display:none;background:none;border:0;font-size:27px;color:var(--brown)}
+.hero{min-height:100vh;padding:150px 10% 90px;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:430px;height:430px;border-radius:50%;background:#e9dcc9;right:-100px;top:20%;opacity:.55;animation:float 7s infinite ease-in-out}
+.hero-content{position:relative;z-index:2;max-width:750px;animation:fadeUp 1s ease}
+.eyebrow{color:var(--gold);font-size:12px;letter-spacing:4px;text-transform:uppercase;margin-bottom:25px}
+.hero h1{font-family:'Playfair Display',serif;color:var(--brown);font-size:clamp(48px,8vw,86px);line-height:1.1;margin-bottom:25px}
+.hero h1 span{color:var(--gold);font-style:italic}
+.hero p{line-height:1.9;max-width:550px;margin-bottom:32px}
+.btn{display:inline-block;padding:15px 27px;border:1px solid var(--brown);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;margin-right:10px;transition:.3s}
+.btn.primary{background:var(--brown);color:white}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:white;transform:translateY(-4px)}
+section{padding:100px 10%}
+.heading{text-align:center;margin-bottom:55px}
+.heading small{color:var(--gold);letter-spacing:4px;text-transform:uppercase;font-size:11px}
+.heading h2{font-family:'Playfair Display',serif;color:var(--brown);font-size:clamp(34px,5vw,48px);margin-top:12px}
+.heading p{max-width:600px;margin:15px auto;line-height:1.8;font-size:14px}
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.about-art{min-height:330px;background:linear-gradient(140deg,#e8d7bd,#b68f60);display:flex;align-items:center;justify-content:center;padding:30px}
+.about-art div{border:1px solid white;padding:50px 35px;text-align:center;color:var(--brown);width:100%}
+.about-art strong{font-family:'Playfair Display',serif;font-size:65px;display:block}
+.about-art span{letter-spacing:4px;font-size:11px}
+.about-text h3{font-family:'Playfair Display',serif;color:var(--brown);font-size:30px;margin-bottom:20px}
+.about-text p{line-height:2;font-size:14px;margin-bottom:15px}
+.skills{background:var(--cream)}
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skill{background:var(--white);padding:30px 18px;text-align:center;border:1px solid #eee4d6;transition:.4s}
+.skill:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 15px 30px #38291f12}
+.skill .symbol{font-size:30px;margin-bottom:12px}
+.skill h3{color:var(--brown);font-size:15px;margin-bottom:8px}
+.skill p{font-size:12px;line-height:1.7;color:#8b796a}
+.projects{background:var(--white)}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.project-card{background:var(--cream);border:1px solid #eee4d6;overflow:hidden;transition:.4s}
+.project-card:hover{transform:translateY(-9px);box-shadow:0 18px 35px #38291f18}
+.cover{height:205px;display:flex;align-items:center;justify-content:center;color:white;text-align:center;padding:20px}
+.cover h3{font-family:'Playfair Display',serif;font-size:29px}
+.aurelle{background:linear-gradient(135deg,#35251d,#987451)}
+.maison{background:linear-gradient(135deg,#d4b995,#74513b)}
+.mille{background:linear-gradient(135deg,#405b43,#a9ba91)}
+.project-info{padding:23px}
+.project-info small{color:var(--gold);font-size:10px;letter-spacing:2px;text-transform:uppercase}
+.project-info h3{font-family:'Playfair Display',serif;color:var(--brown);font-size:22px;margin:10px 0}
+.project-info p{font-size:13px;line-height:1.8;min-height:90px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+.tags span{font-size:10px;background:#eee4d6;padding:6px 9px;color:var(--brown)}
+.project-link{color:var(--gold);font-size:12px;font-weight:bold;letter-spacing:1px}
+.contact{background:var(--brown);color:var(--white);text-align:center}
+.contact .heading h2{color:var(--white)}
+.contact .heading p{color:#e5d9cb}
+.contact-details{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;margin-top:30px}
+.contact-details a{border:1px solid #b58b55;padding:14px 22px;color:#f4e7d4;font-size:13px;transition:.3s}
+.contact-details a:hover{background:var(--gold)}
+footer{background:#251a14;color:#cbb9a4;text-align:center;padding:24px;font-size:12px}
+footer span{color:var(--gold)}
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)}}
+@media(max-width:850px){
+ .project-grid{grid-template-columns:1fr 1fr}
+ .about-grid{gap:30px}
+}
+@media(max-width:650px){
+ nav{padding:16px 6%}
+ .menu-toggle{display:block}
+ .nav-links{display:none;position:absolute;top:65px;left:0;width:100%;background:var(--cream);padding:25px;flex-direction:column;gap:20px;border-bottom:1px solid #e8ddce}
+ .nav-links.active{display:flex}
+ .hero{padding:130px 7% 80px}
+ section{padding:75px 7%}
+ .about-grid{grid-template-columns:1fr}
+ .skill-grid{grid-template-columns:1fr 1fr}
+ .project-grid{grid-template-columns:1fr}
+ .project-info p{min-height:0}
+ .contact-details{flex-direction:column}
+ .contact-details a{width:100%}
+}
+@media(max-width:380px){.skill-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+
+<body>
+
+<nav>
+ <a href="#home" class="logo">JESSA<span>.</span></a>
+ <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation">☰</button>
+ <ul class="nav-links" id="navLinks">
+  <li><a href="#home" onclick="closeMenu()">Home</a></li>
+  <li><a href="#about" onclick="closeMenu()">About</a></li>
+  <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+  <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+  <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+ </ul>
+</nav>
+
+<header class="hero" id="home">
+ <div class="hero-content">
+  <div class="eyebrow">Aspiring Web Developer</div>
+  <h1>Creating Digital<br><span>Experiences</span> with Purpose.</h1>
+  <p>Hello! I'm Jessa Dañeliz. I create elegant, responsive and functional websites for businesses and creative brands. Welcome to my portfolio.</p>
+  <div>
+   <a href="#projects" class="btn primary">Explore My Work</a>
+   <a href="#contact" class="btn">Contact Me</a>
+  </div>
+ </div>
+</header>
+
+<section class="about" id="about">
+ <div class="heading reveal">
+  <small>Get to Know Me</small>
+  <h2>About Me</h2>
+ </div>
+ <div class="about-grid reveal">
+  <div class="about-art">
+   <div><strong>JD</strong><span>CREATIVE DEVELOPER</span></div>
+  </div>
+  <div class="about-text">
+   <h3>Designing with creativity. Building with purpose.</h3>
+   <p>I'm Jessa Dañeliz, an aspiring web developer passionate about creating beautiful and user-friendly digital experiences.</p>
+   <p>I enjoy turning ideas into functional websites using HTML, CSS and JavaScript. I also explore backend integrations to build practical business solutions.</p>
+   <p>My goal is to continue learning, improving my skills and creating websites that help businesses grow online.</p>
+  </div>
+ </div>
+</section>
+
+<section class="skills" id="skills">
+ <div class="heading reveal">
+  <small>What I Work With</small>
+  <h2>My Skills</h2>
+  <p>Technologies and tools I use to create and publish websites.</p>
+ </div>
+ <div class="skill-grid">
+  <div class="skill reveal"><div class="symbol">⌘</div><h3>HTML5</h3><p>Website structure and semantic markup.</p></div>
+  <div class="skill reveal"><div class="symbol">✧</div><h3>CSS3</h3><p>Styling, responsive layouts and animations.</p></div>
+  <div class="skill reveal"><div class="symbol">JS</div><h3>JavaScript</h3><p>Interactive features and website functionality.</p></div>
+  <div class="skill reveal"><div class="symbol">◈</div><h3>Responsive Design</h3><p>Websites for mobile, tablet and desktop.</p></div>
+  <div class="skill reveal"><div class="symbol">⌥</div><h3>GitHub</h3><p>Source code and project management.</p></div>
+  <div class="skill reveal"><div class="symbol">▣</div><h3>Supabase</h3><p>Database integration and backend features.</p></div>
+ </div>
+</section>
+
+<section class="projects" id="projects">
+ <div class="heading reveal">
+  <small>Selected Work</small>
+  <h2>My Projects</h2>
+  <p>A collection of café and restaurant website projects showcasing my web development skills.</p>
+ </div>
+ <div class="project-grid">
+  <article class="project-card reveal">
+   <div class="cover aurelle"><h3>AURELLE<br>COFFEE HOUSE</h3></div>
+   <div class="project-info">
+    <small>Featured Project · 01</small>
+    <h3>Aurelle Coffee House</h3>
+    <p>A café ordering website with an interactive cart, Supabase database, customer order saving and an admin dashboard.</p>
+    <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Supabase</span></div>
+    <a class="project-link" href="https://aurelle-coffee-house.netlify.app/" target="_blank" rel="noopener">VIEW LIVE PROJECT ↗</a>
+   </div>
+  </article>
+
+  <article class="project-card reveal">
+   <div class="cover maison"><h3>MAISON<br>CAFÉ</h3></div>
+   <div class="project-info">
+    <small>Website Project · 02</small>
+    <h3>Maison Café</h3>
+    <p>An elegant premium café website concept with a stylish menu, shopping cart and online ordering interface.</p>
+    <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span></div>
+    <a class="project-link" href="#contact">PROJECT DETAILS ↗</a>
+   </div>
+  </article>
+
+  <article class="project-card reveal">
+   <div class="cover mille"><h3>MILLE<br>MATCHA DGT</h3></div>
+   <div class="project-info">
+    <small>Website Project · 03</small>
+    <h3>Mille Matcha DGT</h3>
+    <p>A modern matcha café website featuring product categories, menu presentation, cart functionality and ordering options.</p>
+    <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span></div>
+    <a class="project-link" href="#contact">PROJECT DETAILS ↗</a>
+   </div>
+  </article>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="heading reveal">
+  <small>Let's Connect</small>
+  <h2>Have a Project in Mind?</h2>
+  <p>I'm open to learning opportunities, collaborations and website development projects. Let's create something beautiful together.</p>
+ </div>
+ <div class="contact-details reveal">
+  <a href="mailto:your-email@example.com">✉ Email Me</a>
+  <a href="https://github.com/" target="_blank" rel="noopener">⌘ GitHub</a>
+  <a href="https://www.linkedin.com/" target="_blank" rel="noopener">in LinkedIn</a>
+ </div>
+</section>
+
+<footer>
+ <p>© 2026 <span>Jessa Dañeliz</span>. Crafted with creativity and care.</p>
+</footer>
+
+<script>
+function toggleMenu(){
+ document.getElementById("navLinks").classList.toggle("active");
+}
+function closeMenu(){
+ document.getElementById("navLinks").classList.remove("active");
+}
+
+const observer = new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add("visible");
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:0.12});
+
+document.querySelectorAll(".reveal").forEach(element=>{
+ observer.observe(element);
+});
+</script>
+
+</body>
+</html>
