@@ -86,9 +86,18 @@ section{padding:100px 10%}
 .project-card:hover{transform:translateY(-9px);box-shadow:0 18px 35px #38291f18}
 .cover{height:205px;display:flex;align-items:center;justify-content:center;color:white;text-align:center;padding:20px}
 .cover h3{font-family:'Playfair Display',serif;font-size:29px}
+
+.cover img{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ display:block;
+}
+
 .aurelle{background:linear-gradient(135deg,#35251d,#987451)}
 .maison{background:linear-gradient(135deg,#d4b995,#74513b)}
 .mille{background:linear-gradient(135deg,#405b43,#a9ba91)}
+
 .project-info{padding:23px}
 .project-info small{color:var(--gold);font-size:10px;letter-spacing:2px;text-transform:uppercase}
 .project-info h3{font-family:'Playfair Display',serif;color:var(--brown);font-size:22px;margin:10px 0}
@@ -257,7 +266,9 @@ footer span{color:var(--gold)}
  </div>
  <div class="project-grid">
   <article class="project-card reveal">
-   <div class="cover aurelle"><h3>AURELLE<br>COFFEE HOUSE</h3></div>
+   <div class="cover aurelle">
+  <img src="images/aurelle-preview.png" alt="Aurelle Coffee House Website Preview">
+</div>
    <div class="project-info">
     <small>Featured Project · 01</small>
     <h3>Aurelle Coffee House</h3>
@@ -268,7 +279,9 @@ footer span{color:var(--gold)}
   </article>
 
   <article class="project-card reveal">
-   <div class="cover maison"><h3>MAISON<br>CAFÉ</h3></div>
+   <div class="cover maison">
+  <img src="images/maison-preview.png" alt="Maison Café Website Preview">
+</div>
    <div class="project-info">
     <small>Website Project · 02</small>
     <h3>Maison Café</h3>
@@ -279,7 +292,9 @@ footer span{color:var(--gold)}
   </article>
 
   <article class="project-card reveal">
-   <div class="cover mille"><h3>MILLE<br>MATCHA DGT</h3></div>
+   <div class="cover mille">
+  <img src="images/mille-preview.png" alt="Mille Matcha DGT Website Preview">
+</div>
    <div class="project-info">
     <small>Website Project · 03</small>
     <h3>Mille Matcha DGT</h3>
