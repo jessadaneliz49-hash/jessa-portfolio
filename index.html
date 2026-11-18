@@ -149,6 +149,64 @@ section{padding:100px 10%}
 .social-actions .btn.outline{border-color:var(--gold);color:var(--brown)}
 .social-actions .btn.outline:hover{color:white}
 
+/* SOCIAL MEDIA PROJECT GALLERY */
+.social-project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.social-project-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(53, 37, 29, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(53, 37, 29, 0.15);
+}
+
+.social-project-card img,
+.social-project-card video {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  background: #f0e9df;
+}
+
+.social-project-info {
+  padding: 20px;
+}
+
+.social-project-info h3 {
+  color: #38291f;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 8px;
+}
+
+.social-project-info p {
+  color: #78695e;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .social-project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .social-project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .contact{background:var(--brown);color:var(--white);text-align:center}
 .contact .heading h2{color:var(--white)}
 .contact .heading p{color:#e5d9cb}
@@ -306,6 +364,7 @@ footer span{color:var(--gold)}
  </div>
 </section>
 
+
 <!-- SOCIAL MEDIA MANAGEMENT PORTFOLIO -->
 <section class="social" id="social">
 
@@ -319,56 +378,69 @@ footer span{color:var(--gold)}
     A collection of sample social media designs created to demonstrate my skills in visual branding, promotional content, graphic design and motion graphics.
   </p>
 
-  <div class="social-grid">
+  <div class="social-project-grid">
 
     <!-- DESIGN 01 -->
-    <article class="social-card reveal">
+    <article class="social-project-card reveal">
       <img src="images/design1.png" alt="Luxury Coffee Product Post">
-      <div class="social-number">01</div>
-      <h3>Luxury Coffee Product Post</h3>
-      <p>Elegant Instagram product advertisement featuring AURELLE's coffee branding.</p>
+      <div class="social-project-info">
+        <small>DESIGN PROJECT · 01</small>
+        <h3>Luxury Coffee Product Post</h3>
+        <p>Elegant Instagram product advertisement featuring AURELLE's coffee branding and luxury visual identity.</p>
+      </div>
     </article>
 
     <!-- DESIGN 02 -->
-    <article class="social-card reveal">
+    <article class="social-project-card reveal">
       <img src="images/design2.png" alt="Special Offer Campaign">
-      <div class="social-number">02</div>
-      <h3>Special Offer Campaign</h3>
-      <p>Dark luxury promotional design featuring a special coffee offer.</p>
+      <div class="social-project-info">
+        <small>DESIGN PROJECT · 02</small>
+        <h3>Special Offer Campaign</h3>
+        <p>Dark luxury promotional design created to highlight a special coffee offer and attract customers.</p>
+      </div>
     </article>
 
     <!-- DESIGN 03 -->
-    <article class="social-card reveal">
+    <article class="social-project-card reveal">
       <img src="images/design3.png" alt="Business Promotional Post">
-      <div class="social-number">03</div>
-      <h3>Business Promotional Post</h3>
-      <p>Modern promotional content designed to attract attention and encourage engagement.</p>
+      <div class="social-project-info">
+        <small>DESIGN PROJECT · 03</small>
+        <h3>Business Promotional Post</h3>
+        <p>Modern promotional content designed to capture attention and encourage audience engagement.</p>
+      </div>
     </article>
 
     <!-- DESIGN 04 -->
-    <article class="social-card reveal">
+    <article class="social-project-card reveal">
       <img src="images/instagram-story.png" alt="Instagram Story Design">
-      <div class="social-number">04</div>
-      <h3>Instagram Story Design</h3>
-      <p>Promotional visual content with a refined and elegant brand style.</p>
+      <div class="social-project-info">
+        <small>DESIGN PROJECT · 04</small>
+        <h3>Instagram Story Design</h3>
+        <p>Creative Instagram Story layout featuring refined typography and elegant coffee brand visuals.</p>
+      </div>
     </article>
 
     <!-- DESIGN 05 -->
-    <article class="social-card reveal">
+    <article class="social-project-card reveal">
       <video controls playsinline preload="metadata">
         <source src="images/animated-story.mp4" type="video/mp4">
+        Your browser does not support video playback.
       </video>
-      <div class="social-number">05</div>
-      <h3>Animated Promotional Video</h3>
-      <p>Motion graphics featuring animated text, product imagery and a call to action.</p>
+      <div class="social-project-info">
+        <small>MOTION GRAPHICS · 05</small>
+        <h3>Animated Promotional Video</h3>
+        <p>Animated coffee promotional content featuring motion graphics, product imagery and a call to action.</p>
+      </div>
     </article>
 
     <!-- DESIGN 06 -->
-    <article class="social-card reveal">
-      <img src="images/facebook-cover.png" alt="Luxury Facebook Cover">
-      <div class="social-number">06</div>
-      <h3>Luxury Facebook Cover</h3>
-      <p>Branded Facebook cover design created to establish a consistent visual identity.</p>
+    <article class="social-project-card reveal">
+      <img src="images/facebook-cover.png" alt="Luxury Facebook Cover Design">
+      <div class="social-project-info">
+        <small>BRAND DESIGN · 06</small>
+        <h3>Luxury Facebook Cover</h3>
+        <p>Elegant Facebook cover design created to establish a consistent and recognizable brand identity.</p>
+      </div>
     </article>
 
   </div>
