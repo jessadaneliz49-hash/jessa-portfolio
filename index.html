@@ -44,7 +44,83 @@ nav{
  border-radius:50%;background:#e9dcc9;right:-100px;
  top:20%;opacity:.55;animation:float 7s infinite ease-in-out
 }
-.hero-content{position:relative;z-index:2;max-width:750px;animation:fadeUp 1s ease}
+ .hero-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 55px;
+  position: relative;
+  z-index: 2;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  max-width: 650px;
+  animation: fadeUp 1s ease;
+}
+
+.hero-photo-wrap {
+  flex: 0 0 340px;
+  width: 340px;
+  height: 420px;
+  padding: 8px;
+  border: 2px solid var(--gold);
+  border-radius: 180px 180px 35px 35px;
+  background: linear-gradient(145deg, #e9dcc9, #b58b55);
+  box-shadow: 0 20px 55px rgba(56,41,31,.18);
+  animation: fadeUp 1.2s ease, portraitFloat 6s ease-in-out infinite;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: 175px 175px 28px 28px;
+  display: block;
+}
+
+@keyframes portraitFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* TABLET AND MOBILE */
+@media(max-width:850px) {
+  .hero-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 35px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-photo-wrap {
+    flex-basis: auto;
+    width: 260px;
+    height: 320px;
+  }
+}
+
+@media(max-width:650px) {
+  .hero-photo-wrap {
+    width: 230px;
+    height: 290px;
+  }
+}
 .eyebrow{color:var(--gold);font-size:12px;letter-spacing:4px;text-transform:uppercase;margin-bottom:25px}
 .hero h1{font-family:'Playfair Display',serif;color:var(--brown);font-size:clamp(48px,8vw,86px);line-height:1.1;margin-bottom:25px}
 .hero h1 span{color:var(--gold);font-style:italic}
@@ -269,16 +345,42 @@ footer span{color:var(--gold)}
 </nav>
 
 <header class="hero" id="home">
- <div class="hero-content">
-  <div class="eyebrow">Web Developer · Social Media Manager</div>
-  <h1>Creating Digital<br><span>Experiences</span> with Purpose.</h1>
-  <p>Hello! I'm Jessa Dañeliz. I create elegant, responsive and functional websites, along with creative social media content and promotional designs for businesses and brands.</p>
-  <div>
-   <a href="#projects" class="btn primary">Explore My Work</a>
-   <a href="#contact" class="btn">Contact Me</a>
+  <div class="hero-inner">
+
+    <div class="hero-content">
+      <div class="eyebrow">
+        Web Developer · Social Media Manager
+      </div>
+
+      <h1>
+        Creating Digital<br>
+        <span>Experiences</span> with Purpose.
+      </h1>
+
+      <p>
+        Hello! I'm Jessa Dañeliz. I create elegant,
+        responsive and functional websites, along
+        with creative social media content and
+        promotional designs for businesses and brands.
+      </p>
+
+      <div>
+        <a href="#projects" class="btn primary">Explore My Work</a>
+        <a href="#contact" class="btn">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="hero-photo-wrap">
+      <img
+        src="FB_IMG_1795412184464.jpg"
+        alt="Jessa Dañeliz"
+        class="hero-photo"
+      >
+    </div>
+
   </div>
- </div>
 </header>
+
 
 <section class="about" id="about">
  <div class="heading reveal">
