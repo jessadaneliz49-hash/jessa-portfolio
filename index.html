@@ -146,13 +146,116 @@ section{padding:100px 10%}
 .about-text h3{font-family:'Playfair Display',serif;color:var(--brown);font-size:30px;margin-bottom:20px}  
 .about-text p{line-height:2;font-size:14px;margin-bottom:15px}  
   
-.skills{background:var(--cream)}  
-.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}  
-.skill{background:var(--white);padding:30px 18px;text-align:center;border:1px solid #eee4d6;transition:.4s}  
-.skill:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 15px 30px #38291f12}  
-.skill .symbol{font-size:30px;margin-bottom:12px}  
-.skill h3{color:var(--brown);font-size:15px;margin-bottom:8px}  
-.skill p{font-size:12px;line-height:1.7;color:#8b796a}  
+  
+
+.skill-grid{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:22px;
+}
+
+.skill{
+ background:var(--white);
+ padding:32px 20px;
+ text-align:center;
+ border:1px solid #eee4d6;
+ border-radius:14px;
+ transition:all .4s ease;
+ position:relative;
+ overflow:hidden;
+}
+
+.skill-logo{
+ width:65px;
+ height:65px;
+ object-fit:contain;
+ margin:0 auto 20px;
+ display:block;
+ animation:logoFloat 3s ease-in-out infinite;
+}
+
+.skill:nth-child(even) .skill-logo{
+ animation-delay:1s;
+}
+
+@keyframes logoFloat{
+ 0%,100%{transform:translateY(0)}
+ 50%{transform:translateY(-8px)}
+}
+
+.skill::before{
+ content:"";
+ position:absolute;
+ top:0;
+ left:-120%;
+ width:60%;
+ height:100%;
+ background:linear-gradient(110deg,transparent,rgba(181,139,85,.13),transparent);
+ transform:skewX(-20deg);
+ transition:.7s;
+ pointer-events:none;
+}
+
+.skill:hover::before{left:150%}
+
+.skill:hover{
+ transform:translateY(-12px) scale(1.03);
+ border-color:var(--gold);
+ box-shadow:0 20px 40px rgba(56,41,31,.15);
+}
+
+.skill::after{
+ content:"";
+ position:absolute;
+ top:0;
+ left:0;
+ width:0;
+ height:3px;
+ background:var(--gold);
+ transition:width .5s ease;
+}
+
+.skill:hover::after{width:100%}
+
+.skill h3{
+ color:var(--brown);
+ font-size:15px;
+ margin-bottom:9px;
+}
+
+.skill p{
+ font-size:12px;
+ line-height:1.7;
+ color:#8b796a;
+}
+
+.skill-category{
+ display:block;
+ font-size:9px;
+ letter-spacing:2px;
+ color:var(--gold);
+ text-transform:uppercase;
+ margin-bottom:10px;
+}
+
+@keyframes skillAppear{
+ from{opacity:0;transform:translateY(35px)}
+ to{opacity:1;transform:translateY(0)}
+}
+
+@media(max-width:650px){
+ .skill-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+ .skill{padding:25px 12px}
+ .skill-logo{width:55px;height:55px}
+}
+
+@media(prefers-reduced-motion:reduce){
+ .skill-logo{animation:none!important}
+ .skill:hover{transform:none}
+}
+
+
+
   
 .projects{background:var(--white)}  
 .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}  
@@ -391,17 +494,74 @@ class="hero-photo"
   <h2>My Skills</h2>  
   <p>Technologies and creative tools I use to build websites and digital content.</p>  
  </div>  
- <div class="skill-grid">  
-  <div class="skill reveal"><div class="symbol">⌘</div><h3>HTML5</h3><p>Website structure and semantic markup.</p></div>  
-  <div class="skill reveal"><div class="symbol">✧</div><h3>CSS3</h3><p>Styling, responsive layouts and animations.</p></div>  
-  <div class="skill reveal"><div class="symbol">JS</div><h3>JavaScript</h3><p>Interactive features and website functionality.</p></div>  
-  <div class="skill reveal"><div class="symbol">◈</div><h3>Responsive Design</h3><p>Websites for mobile, tablet and desktop.</p></div>  
-  <div class="skill reveal"><div class="symbol">▣</div><h3>Supabase</h3><p>Database integration and backend features.</p></div>  
-  <div class="skill reveal"><div class="symbol">✦</div><h3>Canva Design</h3><p>Social media graphics and brand visuals.</p></div>  
-  <div class="skill reveal"><div class="symbol">▶</div><h3>Motion Graphics</h3><p>Animated promotional content and short videos.</p></div>  
-  <div class="skill reveal"><div class="symbol">◎</div><h3>Social Media Content</h3><p>Creative content for Instagram and Facebook.</p></div>  
-  <div class="skill reveal"><div class="symbol">⌥</div><h3>GitHub</h3><p>Source code and project management.</p></div>  
- </div>  
+ 
+<div class="skill-grid">
+
+  <div class="skill reveal">
+    <img class="skill-logo" src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5 Logo">
+    <span class="skill-category">Web Development</span>
+    <h3>HTML5</h3>
+    <p>Website structure and semantic markup.</p>
+  </div>
+
+  <div class="skill reveal">
+    <img class="skill-logo" src="https://cdn.simpleicons.org/css/663399" alt="CSS3 Logo">
+    <span class="skill-category">Web Development</span>
+    <h3>CSS3</h3>
+    <p>Website styling, responsive layouts and animations.</p>
+  </div>
+
+  <div class="skill reveal">
+    <img class="skill-logo" src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript Logo">
+    <span class="skill-category">Programming</span>
+    <h3>JavaScript</h3>
+    <p>Interactive features and website functionality.</p>
+  </div>
+
+  <div class="skill reveal">
+    <img class="skill-logo" src="https://cdn.simpleicons.org/supabase/3FCF8E" alt="Supabase Logo">
+    <span class="skill-category">Backend</span>
+    <h3>Supabase</h3>
+    <p>Database integration and backend features.</p>
+  </div>
+
+  <div class="skill reveal">
+    <img class="skill-logo" src="https://cdn.simpleicons.org/canva/00C4CC" alt="Canva Logo">
+    <span class="skill-category">Creative Design</span>
+    <h3>Canva</h3>
+    <p>Social media graphics and promotional designs.</p>
+  </div>
+
+  <div class="skill reveal">
+    <img class="skill-logo" src="https://cdn.simpleicons.org/github/181717" alt="GitHub Logo">
+    <span class="skill-category">Development Tools</span>
+    <h3>GitHub</h3>
+    <p>Source code management and project publishing.</p>
+  </div>
+
+  <div class="skill reveal">
+    <img class="skill-logo" src="https://cdn.simpleicons.org/facebook/0866FF" alt="Facebook Logo">
+    <span class="skill-category">Social Media</span>
+    <h3>Facebook</h3>
+    <p>Social media content and promotional campaigns.</p>
+  </div>
+
+  <div class="skill reveal">
+    <img class="skill-logo" src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram Logo">
+    <span class="skill-category">Social Media</span>
+    <h3>Instagram</h3>
+    <p>Visual content, branding and audience engagement.</p>
+  </div>
+
+  <div class="skill reveal">
+    <img class="skill-logo" src="https://cdn.simpleicons.org/capcut/000000" alt="CapCut Logo">
+    <span class="skill-category">Video Editing</span>
+    <h3>CapCut</h3>
+    <p>Short-form videos and promotional content.</p>
+  </div>
+
+</div>
+
 </section>  <section class="projects" id="projects">  
  <div class="heading reveal">  
   <small>Web Development</small>  
